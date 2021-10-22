@@ -1,0 +1,10 @@
+---
+- name: This plyabook is installing the packages
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: installing the packages
+    yum:
+       name: httpd
+       state: latest

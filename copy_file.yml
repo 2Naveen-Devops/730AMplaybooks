@@ -1,0 +1,13 @@
+---
+- name: This playbook used to copy the file
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copying the file
+    copy:
+      src: "/home/ansadmin/index.html"
+      dest: "/home/ansadmin"
+      group: ansadmin
+      owner: ansadmin
+      mode: 0644

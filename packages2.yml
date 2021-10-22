@@ -1,0 +1,11 @@
+---
+- name: This playbook is used to installing the packages
+  hosts: all
+  # become: yes
+
+  tasks:
+  - name: installing the packages
+    yum:
+      name: tree
+      state: latest
+

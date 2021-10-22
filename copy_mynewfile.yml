@@ -1,0 +1,11 @@
+---
+- name: This is used to copy the file
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: copy the file
+    copy:
+      src: "/home/ansadmin/index.html"
+      dest: "/home/ansadmin/var/www/html/test.html"
+      mode: 0666

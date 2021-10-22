@@ -1,0 +1,29 @@
+--- 
+- name: This is my playbook
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: This is used to install the httpd
+    yum:
+      name: httpd
+      state: installed
+    when: ansible_os_family== "RedHat"  
+
+  - name: This is used to start the service
+    service:
+      name: httpd
+      state: started
+    when: ansible_os_family== "RedHat"
+
+  - name: This is used to install the apache2
+    apt:
+      name: apache2
+      state: started
+    when: ansible_os_family== "Debian"
+
+  - name: This is used to start the service
+    service:
+      name: apache2
+      state: started
+    when: ansible_os_family== "Debian"

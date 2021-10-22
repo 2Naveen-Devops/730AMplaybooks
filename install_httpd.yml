@@ -1,0 +1,15 @@
+---
+- name: This is text playbook
+  hosts: all
+  become: yes
+
+  tasks:
+  - name: This is used to install package
+    yum:
+      name: httpd
+      state: installed
+
+  - name: This is used to start the service
+    service:
+      name: httpd
+      state: started
